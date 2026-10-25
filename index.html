@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task 05: Getting values from HTML</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="page-head">
+    <h1>Getting values from HTML</h1>
+    <p>One working example for each DOM property. Change the demo, press the button, and read the result on the right.</p>
+  </header>
+
+  <main>
+
+    <!-- 1. value -->
+    <section class="demo">
+      <div class="demo-body">
+        <h2>.value</h2>
+        <p class="what">Gets the current value of a form element (input, textarea, select).</p>
+        <label for="nameInput">Your name</label>
+        <input type="text" id="nameInput" value="Ahmad">
+        <label for="noteInput">Note</label>
+        <textarea id="noteInput" rows="2">Hello from Qasim</textarea>
+        <button type="button" id="btnValue">Get values</button>
+      </div>
+      <pre class="result" id="outValue" aria-live="polite">Result appears here.</pre>
+    </section>
+
+    <!-- 2. innerText -->
+    <section class="demo">
+      <div class="demo-body">
+        <h2>.innerText</h2>
+        <p class="what">Gets the visible text of an element. Hidden text is left out.</p>
+        <p id="textDemo1">Visible text <span style="display:none">(hidden part)</span>and more.</p>
+        <button type="button" id="btnInnerText">Get innerText</button>
+      </div>
+      <pre class="result" id="outInnerText" aria-live="polite">Result appears here.</pre>
+    </section>
+
+    <!-- 3. textContent -->
+    <section class="demo">
+      <div class="demo-body">
+        <h2>.textContent</h2>
+        <p class="what">Gets all text inside an element, including hidden text.</p>
+        <p id="textDemo2">Visible text <span style="display:none">(hidden part)</span>and more.</p>
+        <button type="button" id="btnTextContent">Get textContent</button>
+      </div>
+      <pre class="result" id="outTextContent" aria-live="polite">Result appears here.</pre>
+    </section>
+
+    <!-- 4. innerHTML -->
+    <section class="demo">
+      <div class="demo-body">
+        <h2>.innerHTML</h2>
+        <p class="what">Gets the HTML markup inside an element.</p>
+        <div id="htmlBox" class="box"><b>Bold</b> and <i>italic</i> text</div>
+        <button type="button" id="btnInnerHTML">Get innerHTML</button>
+      </div>
+      <pre class="result" id="outInnerHTML" aria-live="polite">Result appears here.</pre>
+    </section>
+
+    <!-- 5. outerHTML -->
+    <section class="demo">
+      <div class="demo-body">
+        <h2>.outerHTML</h2>
+        <p class="what">Gets the element itself, including its own tag and the markup inside.</p>
+        <div id="outerBox" class="box" title="Demo box"><b>Bold</b> and <i>italic</i> text</div>
+        <button type="button" id="btnOuterHTML">Get outerHTML</button>
+      </div>
+      <pre class="result" id="outOuterHTML" aria-live="polite">Result appears here.</pre>
+    </section>
+
+    <!-- 6. checked -->
+    <section class="demo">
+      <div class="demo-body">
+        <h2>.checked</h2>
+        <p class="what">Tells whether a checkbox or radio button is checked (true or false).</p>
+        <label class="inline"><input type="checkbox" id="agreeBox"> I agree to the terms</label>
+        <fieldset>
+          <legend>Favourite language</legend>
+          <label class="inline"><input type="radio" name="lang" value="HTML"> HTML</label>
+          <label class="inline"><input type="radio" name="lang" value="CSS"> CSS</label>
+          <label class="inline"><input type="radio" name="lang" value="JavaScript"> JavaScript</label>
+        </fieldset>
+        <button type="button" id="btnChecked">Get checked state</button>
+      </div>
+      <pre class="result" id="outChecked" aria-live="polite">Result appears here.</pre>
+    </section>
+
+    <!-- 7. selectedIndex -->
+    <section class="demo">
+      <div class="demo-body">
+        <h2>.selectedIndex</h2>
+        <p class="what">Gets the index (starting at 0) of the selected option in a dropdown.</p>
+        <label for="citySelect">City</label>
+        <select id="citySelect">
+          <option>Lahore</option>
+          <option>Karachi</option>
+          <option>Islamabad</option>
+          <option>Murree</option>
+        </select>
+        <button type="button" id="btnSelectedIndex">Get selectedIndex</button>
+      </div>
+      <pre class="result" id="outSelectedIndex" aria-live="polite">Result appears here.</pre>
+    </section>
+
+    <!-- 8. files -->
+    <section class="demo">
+      <div class="demo-body">
+        <h2>.files</h2>
+        <p class="what">Gets the list of files chosen in a file input.</p>
+        <label for="fileInput">Choose one or more files</label>
+        <input type="file" id="fileInput" multiple>
+        <button type="button" id="btnFiles">Get files</button>
+      </div>
+      <pre class="result" id="outFiles" aria-live="polite">Result appears here.</pre>
+    </section>
+
+    <!-- 9. className -->
+    <section class="demo">
+      <div class="demo-body">
+        <h2>.className</h2>
+        <p class="what">Gets the class attribute of an element as one string.</p>
+        <p id="classDemo" class="note highlight large">This paragraph has three classes.</p>
+        <button type="button" id="btnClassName">Get className</button>
+      </div>
+      <pre class="result" id="outClassName" aria-live="polite">Result appears here.</pre>
+    </section>
+
+    <!-- 10. id -->
+    <section class="demo">
+      <div class="demo-body">
+        <h2>.id</h2>
+        <p class="what">Gets the id of an element.</p>
+        <p id="uniqueParagraph">This paragraph has a unique id.</p>
+        <button type="button" id="btnId">Get id</button>
+      </div>
+      <pre class="result" id="outId" aria-live="polite">Result appears here.</pre>
+    </section>
+
+    <!-- 11. attributes -->
+    <section class="demo">
+      <div class="demo-body">
+        <h2>.attributes</h2>
+        <p class="what">Gets every attribute of an element as a list of name and value pairs.</p>
+        <a id="linkDemo" class="ext" href="https://github.com" target="_blank" rel="noopener" data-category="code">Visit GitHub</a>
+        <button type="button" id="btnAttributes">Get attributes</button>
+      </div>
+      <pre class="result" id="outAttributes" aria-live="polite">Result appears here.</pre>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
